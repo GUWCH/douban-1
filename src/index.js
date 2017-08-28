@@ -2,7 +2,8 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
-import {browerHistory} from 'react-router'
+// import {browerHistory} from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
 import {syncHistoryWithStore} from 'react-router-redux'
 
 // 引入项目的相关配置
@@ -16,8 +17,8 @@ import fastClick from 'fastclick'
 fastClick.attach(document.body)
 
 const store = configureStore()
-const history = syncHistoryWithStore(browerHistory, store)
-const router = getRouter()
+const history = syncHistoryWithStore(createBrowserHistory(), store)
+const router = getRouter(history)
 
 render(
     <Provider store={store}>
@@ -25,5 +26,3 @@ render(
     </Provider>,
     document.getElementById('root')
 )
-
-registerServiceWorker();

@@ -1,17 +1,17 @@
 import 'isomorphic-fetch'
 import {push, goBack, replace} from 'react-router-redux'
-import {IGNORE_ID, IGNORE_RACE, createIgnoreId} from '../libs/ignoreActions'
-
+import {IGNORE_ID, IGNORE_RACE, createIgnoreId} from './ignoreAction'
+const ROOT_URL = ''
 // 封装的请求api
 function callApi (endpoint, data) {
     const fullUrl = ROOT_URL + endpoint
     // 将cookie包含发送出去
-    let optiosn = {
+    let option = {
         credentials: 'include'
     }
     if (data) {
         if (data.formData) { // 文件上传
-            options = {
+            option = {
                 method: 'post',
                 credentials: 'include',
                 headers: {
@@ -20,7 +20,7 @@ function callApi (endpoint, data) {
                 body: data.formData.data
             }
         } else {
-            options = {
+            option = {
                 method: 'post',
                 credentials: 'include',
                 headers: {

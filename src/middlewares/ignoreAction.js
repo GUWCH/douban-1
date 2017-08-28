@@ -69,7 +69,7 @@ export const ignoreInvaildAction = ({dispatch}) => next => action => {
         ignoreActionsCache[ignoreId] = {
             status: 'waiting',
             originAction: Object.assign({}, action)
-        } 
+        }
     } else {
         delete ignoreActionsCache[ignoreId]
     }
@@ -81,8 +81,8 @@ export const ignoreInvaildAction = ({dispatch}) => next => action => {
         if (lastRaceActions[actionType].type === type) {
             const origin = ignoreActionsCache[lastRaceActions[actionType].ignoreId]
             if (origin && origin.status !== 'ignore') {
-                orign.status = 'ignore'
-                dispatch(createIgnoreAction(originAction))
+                origin.status = 'ignore'
+                dispatch(createIgnoreAction(origin))
             }
         }
         if (lastRaceActions[actionType].ignoreId === ignoreId) {
