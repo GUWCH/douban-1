@@ -1,0 +1,70 @@
+@import '../../common/variable';
+.confirm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  visibility: hidden;
+  background: rgba(0, 0, 0, .4);
+  opacity: 0;
+  transition: all .5s;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.62rem;
+    background: #fff;
+    border-radius: .02rem;
+    transform: translate(-50%, -50%);
+    > section {
+      padding: .24rem;
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+      }
+    }
+    h1 {
+      margin-bottom: .08rem;
+      font-size: .16rem;
+      line-height: .22rem;
+      color: $primary-text;
+      text-align: center;
+    }
+    .text {
+      font-size: .14rem;
+      line-height: .24rem;
+      text-align: center;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    margin: 0;
+    > div {
+      min-width: 45%;
+      flex: 1;
+      border-top: 1px solid $border-color;
+      + div {
+        border-left: 1px solid $border-color;
+      }
+    }
+    .btn {
+      width: 100%;
+      background-color: #fff;
+    }
+  }
+  .btn-cancel {
+    color: $hint-text;
+  }
+  .btn-confirm {
+    color: $primary-text;
+  }
+}

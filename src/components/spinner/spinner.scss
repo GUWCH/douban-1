@@ -1,0 +1,24 @@
+.spinner{
+    position: relative;
+    width: 44px;
+    height: 44px;
+}
+
+.spinner-bar{
+    position: absolute;
+    top: 45%;
+    left: 37%;
+    width: 28%;
+    height: 7.8%;
+    background-color: white;
+    border-radius: 5px;
+    animation: spinner-spin .8s linear infinite;
+}
+
+@keyframes spinner-spin {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0.15;
+    }
+}
