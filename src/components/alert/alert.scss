@@ -1,0 +1,53 @@
+@import '../../common/variable.scss';
+
+.alert {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: .14rem .36rem .14rem .15rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    background-color: $primary-color;
+    opacity: 1;
+    transition: all 1s;
+    animation: alertMoveIn 1s forwards;
+    &.hide{
+        opacity: 0;
+    }
+    .close-alert{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+        width: .36rem;
+        height: 100%;
+        cursor: pointer;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            width: .02rem;
+            height: .12rem;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+        }
+        &::before{
+            transform: translate(-50%, -50%) rotate(45deg)
+        }
+        &::after{
+            transform: translate(-50%, -50%) rotate(-45deg)
+        }
+    }
+}
+
+@keyframes alertMoveIn {
+    from {
+        transform: translate3d(0, -100%, 0)
+    } to {
+        transform: translate3d(0, 0, 0)
+    }
+}

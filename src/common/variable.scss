@@ -1,0 +1,26 @@
+// main
+$primary-color: #f05f20;
+$background-color: #f3f3f3;
+
+// border
+$border-color: #ebebeb;
+
+// text
+
+$primary-text: #30343f;
+$secondary-text: #9b9b9b;
+$hint-text: #9dcaff;
+
+// button
+
+$btn-hover-bg: #d7551c;
+$btn-disabled-bg: #f37f4c;
+
+@mixin icon ($url, $width: .24rem, $height: .24rem) {
+    display: inline-block;
+    width: $width;
+    height: $height;
+    vertical-align: middle;
+    background: url($url) no-repeat center;
+    background-size: contain;
+}
